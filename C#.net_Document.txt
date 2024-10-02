@@ -1,0 +1,286 @@
+                       C#.NET DEMO:
+                       ============
+
+C# ===> C-Sharp===>C# is a one of the core technology in dotnet mvc 
+framework.
+
+C#, ADO.NET,ASP.NET WHICH IS USED TO DOT MVC FRAMEWORK FOR DEVELOPING
+WEB APPLICATIONS.
+
+USING DOT NET FRAMEWORK.
+
+WHAT IS A FRAMEWORK?
+FRAMEWORK IS A SET OF TECHNOLOGIES LIKE C#.NET, ADO.NET,ASP.NET
+WHICH IS USED TO REDUCE THE BURDEN ON THE DEVELOPERS WHILE
+AT THE TIME OF DEVELOPING THE WEBAPPLICATION USING DOTNET.
+
+DOTNET IS FOLLOWING MVC DESIGN PATTERN ARCHITECTURE RULE AND
+DEVELOP EACH AND EVERY WEBAPPLICATION AS PER THE CLIENT REQUIREMENT.
+
+MVC===>MODEL VIEW CONTROLLER. ADO.NET
+
+
+class:
+=====
+class is reserve word in c#.net.
+
+
+class BasicProgram{
+    static void Main(string[] args){
+        System.Console.WriteLine("Hello World");
+    }//closing main method
+}//class closing
+
+
+every c# program can be saved with filename.cs
+
+25 concepts
+
+====================================================================================================================================
+Datatypes:
+==========
+Datatypes are nothing but some of the keywords of programming languages. which are used to specify what type of datatype
+is stored into the variables.
+
+Following datatypes are :
+
+int =====>int is a one of the datatype in c#. it can stores integer values===>4 bytes
+long=====> long is a one of the datatype in c#. it can stores integer values===>8 bytes
+float========>float is a one of the datatype in c#. it can stores decimal values===>4 bytes
+double=======>double is a one of the datatype in c#. it can stores decimal values===>8 bytes
+bool=========>bool is a one of the datatype in c#. it can stores boolean values(true or false)===>1 byte
+char=========>char is a one of the datatype in c#. it can stores character/letters values with single quotes single characters===>2 bytes
+string=======>string  is a one of the datatype in c#. it can stores group of characters or sequence of characters with double quotes===>2 bytes.
+
+Date Class in C#:
+=================
+To set dates in C#, use DateTime Class.
+The DateTime value is between 12:00:00 midnight, feb 25, 001 to 11:59:30P.M., December 31, 1991 A.d.
+
+
+Variables:
+=========
+*)Variable is a name of memory location which are used to store the data temperorly until
+its execution.
+*)we can define variables in 3 ways:
+a)alphabets
+b)underscores
+c)digits
+*)but variable names must be starts with only alphabets and underscores but not with
+digits.
+
+Example Program:
+================
+using System;
+
+namespace BasicConsoleApp
+{
+    class Hello
+    {
+      
+        static void Main(String[] args)
+        {
+            int 3__x = 3;
+            Console.WriteLine(3__x);
+        }
+    }
+}
+
+
+Output:
+=======
+False
+3.6
+300
+rama
+f
+
+=======
+Error
+
+
+Variables types:
+
+a)static variable:
+===================
+*)A variable which is defined in side of the class and which is preceeded with static 
+keyword is known as a static variable.
+*)static variable can be accessed with in a class directly.
+
+Example:
+========
+using System;
+
+namespace BasicConsoleApp
+{
+    class Hello
+    {
+        static Boolean b = true;
+        static float f = 4.5f;
+        static void Main(String[] args)
+        {
+            Console.WriteLine(b);
+            Console.WriteLine(f);
+        }
+    }
+}
+
+
+b)non-static variable:
+========================
+*)A variable which is defined in side of the class and which is not preceeded with static 
+keyword is known as a non-static variable.
+*)non-static variable can be accessed with in a class using current class Object Reference Variable.
+
+Example 1:
+==========
+using System;
+
+namespace BasicConsoleApp
+{
+    class Hello
+    {
+        Boolean b = true;
+        float f = 4.5f;
+        int i = 34;
+        static void Main(String[] args)
+        {
+            //classname referencevariable=new classname();
+            Hello h = new Hello();
+            Console.WriteLine(h.b);
+            Console.WriteLine(h.f);
+            Console.WriteLine(h.i);
+        }
+    }
+}
+
+
+Example 2:
+===========
+using System;
+
+namespace BasicConsoleApp
+{
+    class Hello
+    {
+        Boolean b;
+        float f;
+        int i;
+        static void Main(String[] args)
+        {
+            //classname referencevariable=new classname();
+            Hello h = new Hello();
+            Console.WriteLine(h.b);
+            Console.WriteLine(h.f);
+            Console.WriteLine(h.i);
+        }
+    }
+}
+
+Output:
+=======
+False
+0
+0
+
+variable which point out the datatypes and store its value.
+reference variable point out the memory or object of that class.
+
+local variable:
+===============
+*)A variable Which is defined and Accessed with in a methods is known as a local variables.
+*)Local Variables Cannot be accessed outside of the another methods.
+*)scope of local variable is defined with in a methods.
+*)default values are not applicable by local variables,values must be mandatoryly initialized by every variable other wise we will get an compiletime/syntax errors.
+
+Example 1:
+=========
+using System;
+
+namespace BasicConsoleApp
+{
+    class Hello
+    {
+        static void Main(String[] args)
+        {
+            Boolean b;
+            float f;
+            int i;
+            Console.WriteLine(b);
+            Console.WriteLine(f);
+            Console.WriteLine(i);
+        }
+    }
+}
+
+Output:
+=======
+CompileTime or Syntax Error.
+
+
+Example 2:
+===========
+using System;
+
+namespace BasicConsoleApp
+{
+    class Hello
+    {
+        static void Main(String[] args)
+        {
+            Boolean b=false;
+            float f=3.6f;
+            int i=300;
+            Console.WriteLine(b);
+            Console.WriteLine(f);
+            Console.WriteLine(i);
+        }
+    }
+}
+
+OutPut:
+=======
+False
+3.6
+300
+
+Example Program for static,non-static and local variable:
+==========================================================
+using System;
+
+namespace BasicConsoleApp
+{
+    class Hello
+    {
+        //static variable
+        static String s = "rama";
+
+        //non-static variable
+        char c = 'f';
+        static void Main(String[] args)
+        {
+            Boolean b=false;
+            float f=3.6f;
+            int i=300;
+            Console.WriteLine(b);
+            Console.WriteLine(f);
+            Console.WriteLine(i);
+
+            //static variable calling
+            Console.WriteLine(s);
+
+            //non-static variable calling
+            Hello h1 = new Hello();
+            Console.WriteLine(h1.c);
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
