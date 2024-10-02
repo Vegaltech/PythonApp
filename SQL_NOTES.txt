@@ -1,0 +1,577 @@
+1)Database:
+============
+Sqlserver database (SEQUEL SERVER DATABASE)
+OracleDb Server
+mysqldb
+postgresql db
+sybase db
+
+What is a Database?
+Database is a collections of tables or objects and tables or objects is a collection of rows and columns
+where we can insert the data in the form of cells format.
+
+Database is in the form of cylindrical structure.
+
+For every database server we have one common language i.e SQL/SEQUEL.
+
+Sql:
+====
+Structured query language.
+Every database understandable lang is sql.
+In earlier days people will called SQL as SEQUEL:
+
+STRUCTURED ENGLISH QUERY LANGUAGE
+
+Another name for database is schema.====>Organization Database or Organization Schema.
+
+Table ====> another name for tables is objects===>Employee Table or Employee Object.
+
+Rows ===> another name for rows is tuple or records.
+
+Columns ===> another name for columns is fields or attributes  (Empid , Empname, Empsalary)
+
+Table name : Facebook
+
+Firstname  Middlename  LastName DateofBirth  MobileNumber Password ConfirmPassword
+
+SQL is a Query Language.
+
+SQL is a case-insensitive query language.(create, CREATE, creaTE)===>C,C++,JAVA,PYTHON,DOTNET==>PL===>Case Sensitive PL'S.(int x=5)
+
+SQL Contains 4 SubLanguages:
+
+DDL===>DATA DEFINITION LANGUAGE. ====>DRCAT(drop,rename,create,alter,truncate)
+
+DML===>DATA MANIPULATION LANGUAGE===>SIDU(select, insert, delete,update)
+
+TCL===>TRANSACTION CONTROL LANGUAGE===>CRS(commit, rollback, savepoint)
+
+DCL===>DATA CONTROL LANGUAGE==>(grant, revoke)
+
+
+Downloading of MicroSoft SQL SERVER DATABASE:
+=============================================
+Go to google and type in search box:
+
+Sql server 2012 download==>Press Enter.
+
+Click on ====>Microsoft® SQL Server® 2012 Service Pack 3 (SP3) Express===>next click on Download
+and select 
+
+1. ENU\x64\SQLEXPR_x64_ENU.exe
+296.6 MB===>MicroSoft SQL Server
+
+
+2. ENU\x64\SQLManagementStudio_x64_ENU.exe
+950.9 MB====>Platform to develop the SQL Queries.
+
+
+To Create any database inside of the database server:
+
+we can use create command.
+
+create is a one of the command in DDL Sublanguage. 
+which is used to create a databases and tables and so on.
+
+syntax for database creation:
+==============================
+create database databasename;
+
+example:
+========
+create database companyDB;
+create database companydb;
+CREATE DATABASE COMPANYDB;
+
+use BiryaniRestaurant;(using the use keyword we can mention to database server that we are using this database).
+
+Using SQL we can develop queries to perform operations inside of Database.
+
+SYNTAX TO CREATE A TABLE:
+=========================
+create table tablename(
+   datatype column1,
+   datatype column2,
+   ================
+);
+
+datatype:
+=========
+datatypes are nothing but a keywords to define a data to the particular columns.
+int
+double/decimal(precision,scale)==>5000.00/-
+char===>1 to 2000 ===>Custname char(20)===>10 characters are used to define the customer name.
+varchar==>1 to 4000===>Custname varchar(15)===>8 characters are used to define the customer name.
+
+Mention which database we have to use using below command to the sqlserver database:
+=====================================================================================
+use COMPANYDB;
+
+Table Creation Example_1:
+========================
+create table employee(
+   empid int,
+   empname char(20),
+   empsalary float,
+   empdeptno int,
+   empdesignation varchar(30)
+);
+
+Table Creation Example_2:
+==========================
+create table Customer(
+   custid int,
+   custname char(20),
+   custaddress varchar(40),
+   custbankbal decimal(6,2)
+);
+
+create table CustomerOrder(
+   Biryanitokenno int,
+   Biryaniname varchar(20),
+   BiryaniPrice float
+);
+           
+insert:
+=======
+insert command is a one of DML sublanguage command.
+which is used to insert the data in to the tables.
+
+syntax for inserting the data into the tables:
+==============================================
+insert into CustomerOrder values(column1data,column2data============);
+
+Example Insert Query:
+====================
+insert into CustomerOrder values(11, 'ChickenBiryani', 345.00);
+
+select:
+=======
+select is a one of the DML Sublanguage command.
+which is used to fetch all the columns data from the given tablename or particular column data from the given tablename.
+
+Example Query:
+=============
+select * from CustomerOrder;
+
+select Biryaniname from CustomerOrder;
+
+To Check the data with in the table, we can use select command from sql:
+========================================================================
+Syntax:
+=======
+select * from tablename;
+
+Example:
+========
+select * from customer; (* indicates to get the all columns data from the table).
+
+To check the particular column data with in the table:
+=======================================================
+select custid, custaddress from customer;
+
+updating the data with in the table:
+=====================================
+update is a one of the DML Sublanguage command.
+which is used to update the data with in the table.
+
+Example Query Syntax:
+======================
+update tablename set columnname=value where columnname = value;
+
+Here where is clause in SQL which is used to perform the conditional operation.
+
+Example Query:
+===============
+update CustomerOrder set Biryaniprice = 200.00 where Biryanitokenno=11;
+
+
+To Check the table architecture:
+=================================
+sp_help tablename;
+
+Example:
+=======
+sp_help CustomerOrder;(stored procedure)
+
+
+decimal datatype:
+=================
+decimal(10,3)
+
+10 ===>precision
+3  ===>scale
+
+alter table Customerorder add itemspecialdiscountprice decimal(10,3); 
+
+sp_help CustomerOrder;
+
+alter table Customerorder add itemspecialdiscountprice decimal(10,3); 
+
+insert into CustomerOrder(itemspecialdiscountprice) values(4352342.200);
+
+select * from CustomerOrder;
+
+update CustomerOrder set itemspecialdiscountprice = 2674326.763 where Biryaniname = 'ChickenBiryani';
+
+alter syntax:
+===============
+alter table tablename add columnname datatype;
+
+example alter add column query:
+=================================
+alter table Customerorder add taxprice decimal(5,1); 
+alter table Customerorder add restaurantloc varchar(15);
+
+update CustomerOrder set restaurantloc='Hyderabad' where Biryanitokenno=11;
+
+insert into CustomerOrder(itemspecialdiscountprice) values(4352342.200);
+
+select * from CustomerOrder;
+
+update CustomerOrder set itemspecialdiscountprice = 2674326.763 where Biryaniname = 'ChickenBiryani';
+
+update CustomerOrder set taxprice = 5378.5 where Biryaniname = 'ChickenBiryani';
+
+float datatype is by dafault taking pricision is 53 and scale is null.
+
+if we overcome that problem with float we can use decimal datatye as decimal(precision,scale);
+                                                     
+How to drop the database with in a SQL SERVER DATABASE?
+
+syntax:
+=======
+drop database databasename;
+
+example:
+========
+drop database BiryaniRestaurant;
+
+How to drop the table with in a SQL SERVER DATABASE?
+
+syntax:
+=======
+drop table tablename;
+
+example:
+========
+drop table employee;
+
+delete:
+========
+to delete the data with in the table we can use delete query.
+
+syntax:
+======
+delete from tablename; ===>this query will delete all the rows from the table.
+
+delete from tablename where columnname=value; ===>this query will delete particular rows from the table based on the condition.
+
+Example Query:
+=============
+delete from employee;
+
+delete from employee where empid=7788;
+delete from employee where empid=7902;
+
+
+How to alter the column datatype and its size:
+================================================
+alter column is used to alter the column datatype and its size.
+
+syntax:
+======
+alter table tablename alter column columnname datatype(size);
+
+example query:
+===============
+alter table customer alter column custname varchar(30);
+alter table customer alter column custaccno varchar(30);
+
+How to rename the column name:
+===============================
+this command is used to rename the oldcolumnname to new columnname.
+
+Rename Columnname syntax:
+==========================
+exec sp_rename 'tablename.oldcolumnname', 'newcolumnname', 'column';
+
+Rename Columnname Query:
+=========================
+exec sp_rename 'customer.custaccno', 'custaccountnumber', 'column';
+exec sp_rename 'customer.custaccountnumber', 'cust_accno', 'column';
+
+
+dropping the column with in the table:
+======================================
+this command is used to drop the column with in the table.
+
+syntax to drop the column:
+==========================
+alter table tablename drop column columnname;
+
+example query:
+===============
+alter table customer drop column custloanamount;
+
+Constraints:
+============
+Constraints is a concept in sql, which is used to provide some restrictions with in the table.
+
+Constraints are mainly 6 types:
+
+1. unique
+2. not null
+3. default
+4. check 
+5. primarykey
+6. foreignkey
+
+unique constraint:
+===================
+1. This constraint can be applied to one or more than one column with in the table.
+2. if we apply unique constraint to any column with in the table means then that column data does not allows duplicate data.
+
+example:
+========
+create table unqtab(id int unique, name char(20));
+
+insert into unqtab values(1, 'sai');
+
+select * from unqtab
+
+insert into unqtab values(1, 'hari');
+
+output:
+======
+Msg 2627, Level 14, State 1, Line 1
+Violation of UNIQUE KEY constraint 'UQ__unqtab__3213E83E49EDEC5A'. Cannot insert duplicate key in object 'dbo.unqtab'. 
+The duplicate key value is (1).
+
+2.not null constraint:
+=======================
+1. This constraint can be applied to one or more than one column with in the table.
+2. if we apply not null constraint to any column with in the table means then that column data does not allows null value.
+
+example:
+========
+create table notnulltab(id int unique, name char(20) not null);
+
+insert into notnulltab values(1, 'sai');
+insert into notnulltab values(2, null);
+select * from notnulltab
+
+3.default constraint:
+=====================
+1. This constraint can be applied to one or more than one column with in the table.
+2. when ever if we are not inserted the data to the column which applied to default constraint then automatically.
+it will insert the default value which is given at the time of creating the table data.
+ 
+example:
+========
+create table defaulttab(id int default(112), name char(20) not null);
+insert into defaulttab values(1, 'sai');
+insert into defaulttab(name) values('hari');
+select * from defaulttab
+
+4. check constraint:
+====================
+1. This constraint can be applied to one or more than one column with in the table.
+2. If we apply check constraint to any column with in the table then that column can perform some restrictions
+   using check constraint.
+
+example query:
+==============
+create table cust(custid int,custname char(20), 
+custbal decimal(4,1) check(custbal>=400.00));
+
+insert into cust values(1,'sai', 345.00);
+insert into cust values(1,'sai', 404.00);
+
+select * from cust;
+
+
+5. primary key:
+===============
+1. primary key is a combination of unique + not null.
+2. This constraint can be applied to only single column with in a table, because table contains only single primary key.
+
+example:
+========
+create table primarykeytab(id int primary key, name char(20));
+insert into primarykeytab values(1111, 'surya');
+insert into primarykeytab values(null, 'surya');
+select * from primarykeytab
+
+
+FOREIGN KEY Constraint:
+=========================
+1. The FOREIGN KEY constraint is used to prevent actions that would destroy links between tables.
+
+2. A FOREIGN KEY is a field (or collection of fields) in one table, that refers to the PRIMARY KEY in another table.
+
+3. The table with the foreign key is called the child table, and the table with the primary key is called the 
+referenced or parent table.
+
+Example:
+========
+CREATE TABLE Customer(
+   CustId int Primary Key,
+   CustName Varchar(30),
+   Custbal  decimal(5,1)
+);
+
+
+CREATE TABLE Employee(
+    EmpId int NOT NULL,
+    EmpName varchar(30) NOT NULL,
+    CustId int,
+    PRIMARY KEY (EmpId),
+    CONSTRAINT FK_Employee FOREIGN KEY (CustId)
+    REFERENCES Customer(CustId)
+);
+
+ON DELETE CASCADE:
+===================
+1. ON DELETE CASCADE Can used to give the source to delete the parent table data and also its depended child data as well based
+with or with out where condition.
+2. ON DELETE CASCADE concept can applied to only child table foreign key table only.
+
+
+SYNTAX:
+=======
+CONSTRAINT ForeignKeyConstraintName FOREIGN KEY (Field)
+REFERENCES Parent(Field)
+
+syntax for ForeignKey Constraint:
+=================================
+create table tablename(columnname datatype(value), columnname datatype(value).......,
+constraint foreignkeyconstraintname foreign key(refferedfromparenttableprimarykeycolumn) references 
+parenttablename(primarykeyinparenttable) ON DELETE CASCADE);
+
+Example Query:
+==============
+CREATE TABLE Employee(
+    EmpId int,
+    EmpName varchar(30) NOT NULL,
+    CustId int,
+    PRIMARY KEY (EmpId),
+    CONSTRAINT FK_Employee FOREIGN KEY (CustId)
+    REFERENCES Customer(CustId) ON DELETE CASCADE
+);
+
+Dropping Constraint:
+====================
+ALTER TABLE Employee DROP CONSTRAINT FK_Employee;
+
+Adding Constraint to Child Table or Foreign Key Table:
+=======================================================
+Alter table Employee add CONSTRAINT FK_Employee FOREIGN KEY (CustId) REFERENCES Customer(CustId)
+======================================================================================================================================
+Transaction Control:
+====================
+The following are the commands used to control transactions:
+
+BEGIN TRANSACTION: It is a command that indicates the beginning of each transaction.
+
+COMMIT: It is a command used to save the changes permanently in the database.
+
+ROLLBACK: It is a command used to cancel all modifications and goes into their previous state.
+
+Example Queries for Commit and Rollback:
+=========================================
+Use Organization
+
+create table Tickets(ticketid int, ticketname char(20), ticketprice decimal(4,1));
+
+begin transaction;
+
+insert into Tickets values(1,'busticket222',345.0);
+
+commit transaction;
+
+select * from tickets;
+
+begin transaction;
+
+delete from tickets;
+
+delete from tickets;
+
+rollback transaction;
+
+select * from tickets;
+======================================================================================================================================
+joins:
+=====
+joins is a concept which is used to combine one or more tables and fetch and data at a time.
+we can fetch more than one table data at a time in the form of joins.
+
+use Organization
+create table emp(empid int,empname char(40),empsal decimal(5,1),deptno int);
+create table dept(deptno int,deptname char(40),deptloc char(20));
+
+insert into emp values(7788, 'SCOTT', 4000.0, 10);
+insert into emp values(7902, 'FORD', 4000.0, 10);
+insert into emp values(7566, 'JONES', 3500.0, 20);
+insert into emp values(7466, 'SMITH', 3800.0, 10);
+insert into emp values(7382, 'CLARK', 2300.0, 30);
+
+select * from emp;
+
+insert into dept values(10, 'ACCOUNTING', 'DALLAS');
+insert into dept values(20, 'SALES', 'UK');
+insert into dept values(30, 'IT', 'AUS');
+insert into dept values(40, 'FINANCE', 'IND');
+
+select * from dept;
+
+1. inner join or equi join:
+===========================
+To get the relationship data between 2 tables is a concept of inner or equi join.
+
+Example:
+=======
+select * from emp inner join dept on emp.deptno=dept.deptno;
+                        or
+select * from emp,dept where emp.deptno=dept.deptno;
+
+select e.empid,e.empname,e.empsal,e.deptno,d.deptname,d.deptloc 
+from emp e inner join dept d on e.deptno=d.deptno;
+
+
+2. Outer Join
+    a)right outer join:
+    ===================
+    It display the left side parent table data based on right side child table data.
+    Example:
+    ========
+    select * from emp right join dept on emp.deptno=dept.deptno;
+
+ 
+    b)left outer join:
+    ===================
+    It display the right side child table data based on left side parent table data.
+    Example:
+    ========
+    select * from emp left join dept on emp.deptno=dept.deptno;
+
+    c)full outer join:
+    ==================
+    It display the combination of 2 tables parent and child table data and shows the relation and non-relationship data between  parent and child tables.
+
+    Example:
+    =========
+    select * from emp full join dept on emp.deptno=dept.deptno;
+
+3.cross join:
+=============
+If we want to fetch more than one table data at a time in the form of cross implementation of table to table then 
+we can use the concept of cross join.
+
+Example:
+=========
+select * from emp cross join dept cross join loc;
+
+
+
