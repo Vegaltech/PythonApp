@@ -1,0 +1,121 @@
+JAVA FULL STACK ANGULAR/REACT JS
+
+FRONT END                 BACK END                       DATABASES:
+
+HTML                      CORE JAVA                      ORACLE DB,MYSQL DB,POSTGRESDB
+CSS                       SPRINGBOOT,JPA,RESTAPI
+JS                        MICROSERVICES
+BOOSTRAP
+ANGULAR
+
+
+CORE JAVA:
+==========
+DATATYPES
+int x=100;
+double customersalary = 50000.00
+method(static & non-static methods)
+deposit method
+withdraw method
+oops
+Encapsulation
+inheritance modules(payments module,cards modules)===>extends keyword
+polymorphism==>methodoverloading, methodriding
+abstraction
+
+
+Exception Handling(Core Java===>try and catch and finally)
+
+Gobal Exception
+
+@Handler
+@ControllerAdvice
+throws ....InsufficientFundsException
+
+
+jdbc===>java database connectivity(java app ====>database(sql / sequel)
+
+SQL===>STRUCTURED QUERY LANG(create)
+columns/fields/variables
+rows/records/tuple
+
+multithreading:
+===============
+web applications===>tomcat server/weblogic/websphere
+
+boxing / unboxing:
+====================
+models===>ORM===> 
+long mobilenumber = 87876778833;
+9 primitives datatypes:
+========================
+int ====> Integer
+char ===> Character
+float ===>Float
+double ===>Double
+byte ==> Byte
+String ==> String
+boolean ===> Boolean
+short ==> Short
+
+SpringBoot===>Postman api tool ==> Model class ===>@Data
+Collection:
+===========
+ArrayList
+LinkedList
+HashSet
+LinkedHashSet
+
+SpringBoot====>MVC Architecture===>Model view template(single design,factory)
+
+JPA ==>Java persistance Api/ Jakartha api
+POJO===>
+@Entity
+@Table(name = 'EmpObj')
+@Id()
+@Column(name = "employeeid")
+private Integer empId;
+
+Models:
+
+EmployeeModel:
+@Data
+@ToString
+@Builder===>A a1=new A();  
+private Integer empId;
+
+
+Serviceclass:
+business
+
+controller class:
+=================
+@Controller
+@RequestBody===>EmployeeModel empModel)
+
+
+@RestController
+
+MicroServices:
+===============
+BankAPP===>a1 a2 a3 a4 a5
+
+Webclient:
+
+
+250 interviews
+every saturday exam + mock interview
+resume preparation
+2 realtime projects.
+=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+Variables:
+==========
+variable is nothing but a name of the memory location which is used to store the values initialized based on datatypes.
+variables are mainly into 3 types:
+  a)static variable:
+  ===================
+  variable
+  b)non-static variable
+  c)local variable
+
+
